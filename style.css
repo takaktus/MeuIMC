@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lekton:ital,wght@0,400;0,700;1,400&display=swap');
+
+
+:root {
+    --cor-primaria: #004d34;
+    --cor-secundaria: white;
+    --cor-terciaria: lightgreen;
+    --cor-texto: white;
+    --cor-titulo: black
+}
+
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'lato'; 
+}
+
+body {
+    font-family: 'lato', sans-serif;
+    background-color: var(--cor-terciaria);
+    
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    
+}
+
+/* Header */
+.header {
+    background-color: var(--cor-terciaria);
+    padding-top: 50px;
+
+}
+
+.nav {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-bottom: solid;
+    padding: 5px 1px 5px 1px;
+    margin-top: 6vh;
+    background-color: var(--cor-texto);
+    width: 100%;
+}
+
+.nav a {
+    font-weight: 300;
+    text-decoration: none;
+    color: blue;
+}
+
+.header__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 14px;
+
+}
+
+
+.header__title {
+    font-size: 2.8rem;
+    letter-spacing: 6px;
+    background-color: var(--cor-secundaria);
+    font-weight: lighter;
+}
+
+.header__subtitle {
+    font-size: 1rem;
+    color: #32494a;
+    font-weight: 300;
+}
+
+
+/* Display geral */
+.main-content {
+    background-color: var(--cor-primaria);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 0px;
+}
+
+
+/* Seção Sobre */
+.about-section {
+    background: var(--cor-primaria);
+    padding: 25px;
+}
+
+.section-title {
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--cor-titulo);
+    background-color: var(--cor-secundaria);
+    width: fit-content;
+    padding: 5px 7px 5px 5px;
+    border-radius: 16px;
+}
+
+.about-content p {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: var(--cor-texto);
+    font-size: 1.3rem;
+    line-height: 1.9;
+    letter-spacing: 1px;
+    font-weight: 300;
+}
+
+#tabela {
+    margin: auto;
+    width: auto;
+    height: 65vh;
+    padding: 80px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Seção Formulário */
+
+.form-section {
+    background: var(--cor-primaria);
+    padding: 0px 25px 25px 25px;
+}
+
+/*Display geral do formulário */
+.imc-form {
+    display: grid;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Caixas de texto */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 50%;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--cor-texto);
+}
+
+/*Entradas usuário */
+.form-input,
+.form-select {
+    border: solid;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+
+}
+
+/* Botões */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: greenyellow;
+    color: var(--cor-titulo);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+}
+
+.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Resultados */
+
+.form-input[readonly] {
+    background-color: var(--cor-secundaria);
+    cursor: not-allowed;
+    width: 35%;
+}
+
+.results-container {
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+    display: grid;
+    gap: 20px;
+}
+
+/* Footer */
+.footer {
+    padding: 30px 0;
+    border-top: solid var(--cor-titulo);
+    margin-top: 50px;
+    color: #7f8c8d;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }  
+
+    .header__title {
+        font-size: 2rem;
+    }
+
+    #tabela {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-input[readonly]{
+        width: 70%;
+    }
+}
