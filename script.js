@@ -13,9 +13,9 @@ function main() {
         let resultadoU = IMCResult(imcU);
         let pesoIdealU = calcularPesoIdeal(alturaConvert, sexoU);
 
-        document.getElementById("resultado-imc").value = imcU.toFixed(2);;
+        document.getElementById("resultado-imc").value = imcU.toFixed(1);
         document.getElementById("situacao").value = resultadoU;
-        document.getElementById("peso-ideal").value = pesoIdealU.toFixed(2);
+        document.getElementById("peso-ideal").value = pesoIdealU.toFixed(2) + "kg";
     }
 }
 
@@ -24,7 +24,7 @@ function validarEntradas(pesoU, alturaU, sexoU) {
     if (pesoU <= 0 || isNaN(pesoU)) {
         return false;
     }
-    if (alturaU <= 0 || isNaN(alturaU)) {
+    if (alturaU <= 0 || isNaN(alturaU) || alturaU > 300 || alturaU < 50) {
         return false;
     }
     if (sexoU !== "masculino" && sexoU !== "feminino") {
