@@ -200,7 +200,7 @@ body {
 .form-input[readonly] {
     background-color: var(--cor-secundaria);
     cursor: not-allowed;
-    width: 35%;
+    width: 50%;
 }
 
 .results-container {
@@ -246,7 +246,4 @@ body {
         height: auto;
     }
 
-    .form-input[readonly]{
-        width: 70%;
-    }
 }

@@ -2,20 +2,20 @@
 function main() {
     const pesoU = Number(document.getElementById("peso").value);
     const alturaU = Number(document.getElementById("altura").value);
-    const sexoU = document.getElementById("sexo")?.value; // erro??
+    const sexoU = document.getElementById("sexo")?.value;
     if (validarEntradas(pesoU, alturaU, sexoU) === false) {
         alert("Por favor, preencha os campos corretamente!");
         return;
     }
-    else { 
-        let alturaConvert = alturaU / 100;
+    else {
+        const alturaConvert = alturaU / 100;
         let imcU = calcularIMC(pesoU, alturaConvert);
         let resultadoU = IMCResult(imcU);
         let pesoIdealU = calcularPesoIdeal(alturaConvert, sexoU);
 
-        document.getElementById("resultado-imc").innerHTML = `Seu IMC é: ${imcU}`;
-        document.getElementById("situacao").innerHTML = `Sua situação atual é: ${resultadoU}`;
-        document.getElementById("peso-ideal").innerHTML = `Seu peso ideal é: ${pesoIdealU} kg`;
+        document.getElementById("resultado-imc").value = imcU.toFixed(2);;
+        document.getElementById("situacao").value = resultadoU;
+        document.getElementById("peso-ideal").value = pesoIdealU.toFixed(2);
     }
 }
 
@@ -34,33 +34,62 @@ function validarEntradas(pesoU, alturaU, sexoU) {
 }
 
 function calcularIMC(pesoU, alturaConvert) {
-    imcU = pesoU / (alturaConvert * alturaConvert);
+    const imcU = pesoU / (alturaConvert * alturaConvert);
     return imcU;
 }
 
 function calcularPesoIdeal(alturaConvert, sexoU) {
+    let pesoIdealU;
     if (sexoU === "masculino") {
         pesoIdealU = 22 * (alturaConvert * alturaConvert);
+        return pesoIdealU;
     } else if (sexoU === "feminino") {
         pesoIdealU = 21 * (alturaConvert * alturaConvert);
+        return pesoIdealU;
     }
 }
 
 function IMCResult(imcU) {
-    if (imcU >= 40)
-        resultadoU = "Obesidade de grau III";
-    else if (imcU >= 35)
-        resultadoU = "Obesidade de grau II";
-    else if (imcU >= 30)
-        resultadoU = "Obesidade de grau I";
-    else if (imcU >= 25)
+    let resultadoU;
+    if (imcU >= 40){
+        resultadoU = "Possível obesidade de grau III";
+        document.getElementsByTagName("body")[0].style.backgroundColor = "darkorange";
+    }
+    else if (imcU >= 35){ 
+        resultadoU = "Possível obesidade de grau II";
+        document.getElementsByTagName("body")[0].style.backgroundColor = "darkorange";
+    }
+    else if (imcU >= 30){ 
+        resultadoU = "Possível obesidade de grau I";
+        document.getElementsByTagName("body")[0].style.backgroundColor = "darkorange";
+    }
+    else if (imcU >= 25){ 
         resultadoU = "Sobrepeso";
-    else if (imcU >= 18.5)
-        resultadoU = "Peso normal";
-    else if (imcU >= 17)
+    }
+    else if (imcU >= 18.5){ 
+        resultadoU = "IMC normal";
+        document.getElementsByTagName("body")[0].style.backgroundColor = "lightblue"; 
+    }
+    else if (imcU >= 17){ 
         resultadoU = "Abaixo do peso (leve)";
-    else if (imcU >= 16)
+    }
+    else if (imcU >= 16){ 
         resultadoU = "Abaixo do peso (grave)";
-    else
+        document.getElementsByTagName("body")[0].style.backgroundColor = "darkorange";
+    }
+    else{ 
         resultadoU = "Abaixo do peso (muito grave)";
+        document.getElementsByTagName("body")[0].style.backgroundColor = "darkorange";
+    }
+    return resultadoU;
+}
+
+function limparCampos() {
+    document.getElementById("peso").value = "";
+    document.getElementById("altura").value = "";
+    document.getElementById("sexo").value = "masculino";
+    document.getElementById("resultado-imc").value = "";
+    document.getElementById("situacao").value = "";
+    document.getElementById("peso-ideal").value = "";
+    document.getElementsByTagName("body")[0].style.backgroundColor = "lightgreen";
 }

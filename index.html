@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu IMC</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 
 <body>
@@ -23,48 +22,48 @@
                 <a href="#formulario">Consulte aqui o seu IMC</a> 
             </nav>
         </header>
-            
+        
             <!-- Main com sessão Sobre e Formulário -->
             <main class="main-content">
-            <section class="about-section">
-                <h2 class="section-title">Saiba mais</h2>
-                <div class="about-content">
-                    <p>A métrica dos números em que o IMC opera (de 10 até cerca de 60) desconsidera o percentual de massa magra e de gordura presente no corpo dos indivíduos analisados. Portanto, apesar de se enquadrar dentro do índice em que trabalha com: altura, peso e sexo. O IMC não é adequado para um exame de saúde completo e não é suficiente para se elaborar um projeto de dieta.<br><br>Por exemplo, dois indivíduos com o peso e altura idênticos, portanto, o mesmo IMC, ainda podem apresentar divisões diferentes entre musculatura e gordura corporal. Isso pode levar a resultados diferentes em exames de saúde, como colesterol, glicose, triglicerídeos, etc. o IMC é um teste que deve ser utilizado com cautela e não deve ser o único critério para avaliar a saúde do indivíduo.</p>
-                </div>
-                
-                <img id="tabela" src="tabela-imc.png" alt="Tabela IMC">
-
-            </section>
-
-            <!-- Formulário para calcular o IMC -->
-             <a name="formulario"></a>
-            <section class="form-section">
-                <h2 class="section-title">Minha consulta</h2>
-                
-                <form id="imc-form" class="imc-form">
-                    <div class="form-group">
-                        <label for="peso">Peso</label>
-                        <input type="number" name="peso" id="peso" placeholder="Em kg" class="form-input">
+                <section class="about-section">
+                    <h2 class="section-title">Saiba mais</h2>
+                    <div class="about-content">
+                        <p>A métrica dos números em que o IMC opera (de 10 até cerca de 60) desconsidera o percentual de massa magra e de gordura presente no corpo dos indivíduos analisados. Portanto, apesar de se enquadrar dentro do índice em que trabalha com: altura, peso e sexo. O IMC não é adequado para um exame de saúde completo e não é suficiente para se elaborar um projeto de dieta.<br><br>Por exemplo, dois indivíduos com o peso e altura idênticos, portanto, o mesmo IMC, ainda podem apresentar divisões diferentes entre musculatura e gordura corporal. Isso pode levar a resultados diferentes em exames de saúde, como colesterol, glicose, triglicerídeos, etc. o IMC é um teste que deve ser utilizado com cautela e não deve ser o único critério para avaliar a saúde do indivíduo.</p>
                     </div>
                     
-                    <div class="form-group">
-                        <label for="altura">Altura</label>
-                        <input type="number" name="altura" id="altura" placeholder="Em cm" class="form-input">
-                    </div>
+                    <img id="tabela" src="tabela-imc.png" alt="Tabela IMC">
                     
-                    <div class="form-group">
-                        <label for="sexo">Sexo biológico</label>
-                        <select name="sexo" id="sexo" class="form-select">
-                            <option value="masculino">Masculino</option>
-                            <option value="feminino">Feminino</option>
+                </section>
+                
+                <!-- Formulário para calcular o IMC -->
+                <a name="formulario"></a>
+                <section class="form-section">
+                    <h2 class="section-title">Minha consulta</h2>
+                    
+                    <form id="imc-form" class="imc-form">
+                        <div class="form-group">
+                            <label for="peso">Peso</label>
+                            <input type="number" name="peso" id="peso" placeholder="Em kg" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="altura">Altura</label>
+                            <input type="number" name="altura" id="altura" placeholder="Em cm" class="form-input">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="sexo">Sexo biológico</label>
+                            <select name="sexo" id="sexo" class="form-select">
+                                <option value="masculino">masculino</option>
+                                <option value="feminino">feminino</option>
                         </select>
                     </div>
-
+                    
                     <div class="form-buttons">
                         <button type="button" id="btn__calcular" class="btn btn-primary" onclick="main()">Calcular</button>
-                        <button type="button" id="btn__limpar" class="btn btn-secondary">Limpar</button>
+                        <button type="button" id="btn__limpar" class="btn btn-secondary" onclick="limparCampos()">Limpar</button>
                     </div>
-
+                    
                     <div class="results-container">
                         <div class="form-group">
                             <label for="resultado-imc">IMC:</label>
@@ -84,7 +83,7 @@
                 </form>
             </section>
         </main>
-
+        
         <!-- Footer -->
         <footer class="footer">
             <div class="footer-content">
@@ -93,5 +92,6 @@
             </div>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
