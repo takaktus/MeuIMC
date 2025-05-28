@@ -245,4 +245,8 @@ body {
         height: auto;
     }
 
+    .form-group, .form-input[readonly] {
+        width: 100%;
+    }
+
 }
